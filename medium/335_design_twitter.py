@@ -1,18 +1,15 @@
-# https://leetcode.com/problems/design-twitter/description/
-
 from collections import defaultdict
 import heapq
 from typing import List
 
 
+# https://leetcode.com/problems/design-twitter/description/
 class Twitter:
-
     def __init__(self):
         self.tweets = defaultdict(list)
         self.follows = defaultdict(set)
         self.timestamp = {}
         self.counter = 0
-
 
     def postTweet(self, userId: int, tweetId: int) -> None:
         self.tweets[userId] += [tweetId]
@@ -33,7 +30,6 @@ class Twitter:
             if len(hp) > 10:
                 heapq.heappop(hp)
         return [heapq.heappop(hp)[1] for _ in range(len(hp))][::-1]
-
 
     def follow(self, followerId: int, followeeId: int) -> None:
         self.follows[followerId].add(followeeId)

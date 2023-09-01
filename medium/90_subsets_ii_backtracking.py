@@ -1,10 +1,9 @@
 from typing import *
 
+
 # https://leetcode.com/problems/subsets-ii/description/
 class Solution:
-
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-
         nums.sort()
         ans = []
 

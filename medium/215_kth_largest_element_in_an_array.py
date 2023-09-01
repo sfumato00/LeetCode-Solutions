@@ -1,9 +1,8 @@
-# https://leetcode.com/problems/kth-largest-element-in-an-array/description/
-
 import heapq
 from typing import List
 
 
+# https://leetcode.com/problems/kth-largest-element-in-an-array/description/
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         return self.count_sort(nums, k)

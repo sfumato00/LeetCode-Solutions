@@ -7,8 +7,10 @@ def use_heap(points: List[List[int]], k: int) -> List[List[int]]:
     heapq.heapify(hp)
     return [points[heapq.heappop(hp)[1]] for _ in range(k)]
 
+
 def use_sort(points: List[List[int]], k: int) -> List[List[int]]:
     return sorted(points, key=lambda x: x[0] ** 2 + x[1] ** 2)[:k]
+
 
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
