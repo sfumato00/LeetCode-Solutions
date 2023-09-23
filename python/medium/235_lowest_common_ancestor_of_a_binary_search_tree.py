@@ -6,7 +6,7 @@
 #         self.right = None
 
 
-from commons import TreeNode
+from python.commons import TreeNode
 
 
 class Solution:

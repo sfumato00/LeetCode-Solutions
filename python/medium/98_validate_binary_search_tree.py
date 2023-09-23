@@ -7,7 +7,7 @@
 from math import inf
 from typing import Optional
 
-from commons import TreeNode
+from python.commons import TreeNode
 
 
 class Solution:

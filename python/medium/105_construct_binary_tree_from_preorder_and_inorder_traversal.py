@@ -6,11 +6,11 @@
 #         self.right = right
 from typing import List, Optional
 
-from commons import TreeNode
+from python.commons import TreeNode
 
 
 class Solution:
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]: 
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         mem = {x: i for i, x in enumerate(inorder)}
         r, n = 0, len(preorder)
 

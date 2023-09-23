@@ -7,7 +7,7 @@
 from collections import deque
 from typing import List, Optional
 
-from commons import TreeNode
+from python.commons import TreeNode
 
 
 class Solution:
