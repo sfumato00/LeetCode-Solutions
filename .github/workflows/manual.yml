@@ -34,5 +34,11 @@ jobs:
     - name: count easy solutions
       run: | 
         easy_count=$(ls python/easy/[0-9]*.py 2> /dev/null | wc -l)
-        echo "the number of easy solutions: ${{ easy_count }}"
+        medium_count=$(ls python/medium/[0-9]*.py 2> /dev/null | wc -l)
+        hard_count=$(ls python/hard/[0-9]*.py 2> /dev/null | wc -l)
+        total=$((easy_count + medium_count + hard_count))
+        echo "Easy: $easy_count"
+        echo "Medium: $medium_count"
+        echo "Hard: $hard_count"
+        echo "Total: $total"
       
