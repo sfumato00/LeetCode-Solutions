@@ -30,3 +30,9 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
+
+    - name: count easy solutions
+      run: | 
+        easy_count=$(ls python/easy/[0-9]*.py 2> /dev/null | wc -l)
+        echo "the number of easy solutions: ${{ easy_count }}"
+      
