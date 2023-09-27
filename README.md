@@ -3,9 +3,9 @@
 ## Python
 
 Easy: 9
-Medium: 60
-Hard: 14
-Total: 83
+Medium: 64
+Hard: 17
+Total: 90
 
 ## JAVA
 
