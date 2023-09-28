@@ -1,30 +1,24 @@
 class Solution:
-    zero = ord("0")
-
     def calculate(self, s: str) -> int:
-        s += "#"
+        s = s + "+"
+        output, term, num = 0, 0, 0
         op = "+"
-        res, temp, number = 0, 0, 0
-        for x in s:
+        for i, x in enumerate(s):
             if x == " ":
                 continue
 
             if x.isdigit():
-                number = number * 10 + (ord(x) - Solution.zero)
+                num = num * 10 + int(x)
                 continue
 
             if op == "+":
-                res += temp
-                temp = number
+                output, term = output + term, num
             elif op == "-":
-                res += temp
-                temp = -number
+                output, term = output + term, -num
             elif op == "*":
-                temp *= number
+                term *= num
             elif op == "/":
-                temp = int(temp / number)
-
-            number = 0
+                term = int(term / num)
+            num = 0
             op = x
-
-        return res + temp
+        return output + term
