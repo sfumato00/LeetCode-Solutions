@@ -1,20 +1,15 @@
-from typing import List
-
-
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        n = len(nums)
         ans, curr = [], []
+        n = len(nums)
 
         def dfs(pos):
-            if pos == n:
-                ans.append(list(curr))
-                return
+            ans.append(list(curr))
 
-            dfs(pos + 1)
-            curr.append(nums[pos])
-            dfs(pos + 1)
-            curr.pop()
+            for i in range(pos, n):
+                curr.append(nums[i])
+                dfs(i + 1)
+                curr.pop()
 
         dfs(0)
         return ans

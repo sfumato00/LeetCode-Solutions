@@ -1,11 +1,11 @@
-# My Solutions for LeetCode problems
+# My Solutions for LeetCode Problems
 
 ## Python
 
-Easy: 19
-Medium: 82
+Easy: 21
+Medium: 90
 Hard: 22
-Total: 123
+Total: 133
 
 ## JAVA
 
