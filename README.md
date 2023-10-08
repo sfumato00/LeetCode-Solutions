@@ -4,8 +4,8 @@
 
 Easy: 21
 Medium: 101
-Hard: 24
-Total: 146
+Hard: 25
+Total: 147
 
 ## JAVA
 
