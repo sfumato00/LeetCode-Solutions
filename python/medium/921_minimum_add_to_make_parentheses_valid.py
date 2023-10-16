@@ -9,5 +9,4 @@ class Solution:
                     ans += 1
                 else:
                     bal -= 1
-        ans += bal
-        return ans
+        return ans + bal
