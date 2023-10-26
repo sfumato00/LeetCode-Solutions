@@ -5,18 +5,14 @@ from typing import List
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         q = deque()
-        for i in range(k):
-            while q and nums[q[-1]] <= nums[i]:
-                q.pop()
-            q += [i]
-        ans = [nums[q[0]]]
-        for i in range(k, len(nums)):
-            if q[0] + k <= i:
+        out = []
+        for i, x in enumerate(nums):
+            if q and i - q[0] >= k:
                 q.popleft()
 
-            while q and nums[q[-1]] <= nums[i]:
+            while q and x > nums[q[-1]]:
                 q.pop()
-
-            q += [i]
-            ans += [nums[q[0]]]
-        return ans
+            q.append(i)
+            if i + 1 >= k:
+                out += [nums[q[0]]]
+        return out
