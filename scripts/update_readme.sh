@@ -1,11 +1,20 @@
-count_solutions_by_language() {
+function count_files {
+    path=$1
+    ext=$2
+    # echo "Debugging: $path, $ext"
+    local count = $(find ${path} -type f -name "[0-9]*.${ext}" 2> /dev/null | wc -l)
+    echo "$count"
+}
+
+function count_solutions_by_language {
     language=$1
     ext=$2
     output_file=$3
     
-    easy_count=$(ls ${language}/easy/[0-9]*.${ext} 2> /dev/null | wc -l)
-    medium_count=$(ls ${language}/medium/[0-9]*.${ext} 2> /dev/null | wc -l)
-    hard_count=$(ls ${language}/hard/[0-9]*.${ext} 2> /dev/null | wc -l)
+    easy_count=$(find ${language}/easy -type f -name "[0-9]*.${ext}" 2> /dev/null | wc -l)
+    # medium_count=$(find ${language}/medium -type f -name "[0-9]*.${ext}" 2> /dev/null | wc -l)
+    medium_count=count_files ${language}/medium $ext
+    hard_count=$(find ${language}/hard -type f -name "[0-9]*.${ext}" 2> /dev/null | wc -l)
     total=$((easy_count + medium_count + hard_count))
     
     echo "Total: $total"
