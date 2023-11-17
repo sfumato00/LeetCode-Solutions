@@ -3,7 +3,6 @@ from collections import defaultdict
 
 class Solution:
     def countPalindromicSubsequence(self, s: str) -> int:
-        
         indices = defaultdict(list)
 
         for i, ch in enumerate(s):
@@ -15,5 +14,5 @@ class Solution:
                 continue
             start, end = idx[0] + 1, idx[-1]
             unique_letter = set(s[start:end])
-            ans += len(unique_letter)        
+            ans += len(unique_letter)
         return ans
