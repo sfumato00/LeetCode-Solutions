@@ -1,3 +1,7 @@
+"""1845. Seat Reservation Manager"""
+import heapq
+
+
 class SeatManager:
     def __init__(self, n: int):
         self.hp = []

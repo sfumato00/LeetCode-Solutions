@@ -1,13 +1,13 @@
-# Definition for singly-linked list.
 class ListNode:
-    def __init__(self, val=0, _next=None):
-        self.val = val
+    '''Singly-linked list node.'''
+    def __init__(self, data=0, _next=None):
+        self.data = data
         self.next = _next
 
     def __str__(self):
         str_builder, _p = [], self
         while _p:
-            str_builder += [str(_p.val)]
+            str_builder += [str(_p.data)]
             _p = _p.next
         return ",".join(str_builder)
 
