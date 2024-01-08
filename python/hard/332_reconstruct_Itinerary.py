@@ -1,6 +1,8 @@
 from collections import defaultdict
 from typing import List
+
 from sortedcontainers import SortedList
+
 
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
